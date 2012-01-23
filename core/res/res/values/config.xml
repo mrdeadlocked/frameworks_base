@@ -750,6 +750,6 @@
     <!-- CM CHANGES START HERE -->
 
     <!-- Use legacy USB device manager. -->
-    <bool name="config_usesLegacyUsbDeviceManager">false</bool>
+    <bool name="config_usesLegacyUsbDeviceManager">true</bool>
 
 </resources>
