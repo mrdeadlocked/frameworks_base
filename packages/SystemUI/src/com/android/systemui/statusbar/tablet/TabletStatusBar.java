@@ -48,7 +48,6 @@ import android.os.IBinder;
 import android.os.Message;
 import android.os.RemoteException;
 import android.os.ServiceManager;
-import android.os.storage.StorageManager;
 import android.text.TextUtils;
 import android.util.Slog;
 import android.view.accessibility.AccessibilityEvent;
@@ -193,9 +192,6 @@ public class TabletStatusBar extends StatusBar implements
     private int mSystemUiVisibility = 0;
     // used to notify status bar for suppressing notification LED
     private boolean mPanelSlightlyVisible;
-
-    // storage	
-    private StorageManager mStorageManager;
 
     public Context getContext() { return mContext; }
 
@@ -398,10 +394,6 @@ public class TabletStatusBar extends StatusBar implements
     public void start() {
         super.start(); // will add the main bar view
 
-        // storage
-        mStorageManager = (StorageManager) mContext.getSystemService(Context.STORAGE_SERVICE);	
-        mStorageManager.registerListener(
-                new com.android.systemui.usb.StorageNotification(mContext));
     }
 
     @Override
